@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo Web Component</title>
+  <style>
+  body {
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+  <todo-list></todo-list>
+
+  <script src="TodoList.js"></script>
+
+  <script>
+    document.querySelector("todo-list")
+      .addEventListener("listChanged", (e) => {
+        console.log("Updated list:", e.detail.items);
+      });
+  </script>
+
+</body>
+</html>

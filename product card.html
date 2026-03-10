@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Card Component</title>
+  <style>
+  body {
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+</style>
+</head>
+
+<body>
+<template id="product-card-template">
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      width: 220px;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    .price {
+      color: green;
+      margin: 8px 0;
+    }
+    button {
+      background: blue;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: block;
+      margin: 10px auto;
+}
+  </style>
+
+  <div class="card">
+    <div class="image">
+      <slot name="image"></slot>
+    </div>
+
+    <div class="name"></div>
+    <div class="price"></div>
+
+    <div class="description">
+      <slot name="description"></slot>
+    </div>
+
+    <button>Buy</button>
+  </div>
+</template>
+
+
+<product-card name="Laptop" price="1200">
+  <img slot="image" src="laptop.jpg" width="200">
+  <p slot="description">Powerful laptop for developers.</p>
+</product-card>
+
+
+<h3>Purchase Output</h3>
+<div id="output">No purchase yet</div>
+
+
+<script src="product-card.js"></script>
+
+</body>
+</html>
